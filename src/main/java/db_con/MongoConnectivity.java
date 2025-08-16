@@ -31,7 +31,7 @@ public class MongoConnectivity {
 	private MongoCollection<Document> testresultCollection;
 
 	public MongoConnectivity() {
-		String uri = "mongodb+srv://waste_management:SyA14iRjLjlEVzQc@management.lnf5snl.mongodb.net/?retryWrites=true&w=majority&appName=management";
+		String uri = "mongodb+srv://waste_management:****************************************************appName=management";
 		MongoClient mongoClient = MongoClients.create(uri);
 		MongoDatabase database = mongoClient.getDatabase("quizportal");
 
@@ -79,12 +79,7 @@ public class MongoConnectivity {
 		userCollection.insertOne(d);
 
 	}
-	/*
-	 * public void getUsername(String email) { Document doc = new Document("email",
-	 * email); Document d=userCollection.find(doc)
-	 * 
-	 * }
-	 */
+	
 
 	public void saveTeachers(String name, String email) {
 		Document d = new Document("name", name).append("email", email);
@@ -210,13 +205,4 @@ public class MongoConnectivity {
 	}
 
 
-	
-
-
-
-
-	// 🔹 Delete tokens when logging out
-//    public void deleteTokenByEmail(String email) {
-//        tokenCollection.deleteMany(Filters.eq("email", email));
-//    }
 }
